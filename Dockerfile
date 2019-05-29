@@ -1,4 +1,5 @@
 FROM node:8
+ARG tag=comment
 WORKDIR /home/niveus/blog-commentend
 COPY package.json /home/niveus/blog-commentend/
 RUN npm install && npm install express && npm install path
