@@ -65,11 +65,22 @@ app.use((req, res, next) => {
 app.use("/api/posts", posts);
 
 //@router test
-app.get("/", (req, res) =>
-  res.json({
+app.get("/", (req, res) =>{
+  var s = process.env.an_env_var || ""; 
+  if(s == ""){
+     console.log("hello",s)
+     res.send(404)
+    
+  }else{
+    
+    res.json({
     greet: "hello"
-  })
-);
+    })
+    
+  }
+  
+
+});
 
 app.listen(PORT, () => {
   console.log("Server is running at port", +PORT);
