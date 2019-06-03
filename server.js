@@ -64,7 +64,7 @@ app.use((req, res, next) => {
 app.use("/api/posts", posts);
 
 //@router test
-app.get("/", (req, res) =>{
+app.get("/backend-comment", (req, res) =>{
   var s = process.env.an_env_var || ""; 
   if(s == ""){
      console.log("hello",s)
