@@ -22,7 +22,7 @@ RUN npm install
 # ---- Release ----
 #FROM base AS release
 # copy production node_modules
-COPY --from=dependencies /root/chat/node_modules ./node_modules
+#OPY --from=dependencies /root/chat/node_modules ./node_modules
 # copy app sources
 COPY . .
 # expose port and define CMD
