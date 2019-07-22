@@ -1,7 +1,7 @@
 
 #
 # ---- Base Node ----
-FROM alpine:3.5 AS base
+FROM alpine:3.5 
 # install node
 RUN apk add --no-cache nodejs-current tini
 # set working directory
@@ -13,15 +13,14 @@ COPY package.json .
 
 #
 # ---- Dependencies ----
-FROM base AS dependencies
+#FROM base AS dependencies
 # install node packages
 # install ALL node_modules, including 'devDependencies'
 RUN npm install
 
 #
 # ---- Release ----
-FROM base AS release
-# copy production node_modules
+#production node_modules
 COPY --from=dependencies /root/chat/node_modules ./node_modules
 # copy app sources
 COPY . .
