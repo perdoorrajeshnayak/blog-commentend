@@ -1,10 +1,10 @@
 steps:
   # build the container image
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/niveusgcp/blog-comment', '.', ]
+  args: ['build', '-t', 'gcr.io/niveus-cici-demo/blog-comment', '.', ]
   # push the container image to Container Registry
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'gcr.io/niveusgcp/blog-comment']
+  args: ['push', 'gcr.io/niveus-cici-demo/blog-comment']
   # Deploy container image to Cloud Run
 - name: 'gcr.io/cloud-builders/gcloud'
-  args: ['beta','run','deploy','blog-comment', '--set-env-vars', 'an_env_var=${TAG_NAME}', '--image', 'gcr.io/niveusgcp/blog-comment', '--region', 'us-central1', '--quiet']
+  args: ['beta','run','deploy','blog-comment', '--set-env-vars', 'an_env_var=${TAG_NAME}', '--image', 'gcr.io/niveus-cici-demo/blog-comment', '--region', 'us-central1', '--quiet']
