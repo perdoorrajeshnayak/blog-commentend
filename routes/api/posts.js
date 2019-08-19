@@ -10,6 +10,7 @@ const User = require("../../models/User");
 // @desc    Add comment to post
 // @access  Public
 router.post("/comment/:id", (req, res) => {
+  res.send(200)
   //either store the user id in client side
   //use the id or use the email
   console.log("adding comment");
@@ -25,7 +26,6 @@ router.post("/comment/:id", (req, res) => {
         // matched email from the dbdoc
         user: usr._id
       };
-
       // Add to comments array
       post.comments.unshift(newComment);
 

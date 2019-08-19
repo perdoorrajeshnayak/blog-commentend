@@ -1,10 +1,10 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
-var cors = require('cors')
-
+var cors = require("cors");
 
 // Handle routes
+//ranjan
 const posts = require("./routes/api/posts");
 
 const app = express();
@@ -16,7 +16,7 @@ app.use(
 );
 
 app.use(bodyParser.json());
-app.use(cors())
+app.use(cors());
 
 //PORT TO RUN
 const PORT = process.env.PORT || 1200;
@@ -56,10 +56,10 @@ mongoose
 //   );
 
 //  res.setHeader(
-//     "Access-Control-Allow-Headers", 
+//     "Access-Control-Allow-Headers",
 //     "Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers"
 //   );
- 
+
 //   next();
 // });
 
@@ -67,22 +67,19 @@ mongoose
 app.use("/api/posts", posts);
 
 //@router test
-app.get("/backend-comment", (req, res) =>{
-  var s = process.env.an_env_var || ""; 
-  if(s == ""){
-     console.log("hello",s)
-     res.send(404)
-    
-  }else{
-    
+app.get("/backend-comment", (req, res) => {
+  var s = process.env.an_env_var || "";
+  if (s == "") {
+    console.log("hello", s);
+    res.send(404);
+  } else {
     res.json({
-    greet: "hello"
-    })
-    
+      greet: "hello"
+    });
   }
-  
-
 });
+
+module.exports = app;
 
 app.listen(PORT, () => {
   console.log("Server is running at port", +PORT);
