@@ -7,4 +7,4 @@ steps:
   args: ['push', 'gcr.io/niveus-cici-demo/blog-comment']
   # Deploy container image to Cloud Run
 - name: 'gcr.io/cloud-builders/gcloud'
-  args: ['beta','run','deploy','blog-comment', '--set-env-vars', 'an_env_var=${TAG_NAME}', '--image', 'gcr.io/niveus-cici-demo/blog-comment', '--region', 'us-central1', '--quiet']
+  args: ['beta','run','deploy','blog-comment','--platform=managed', '--set-env-vars', 'an_env_var=${TAG_NAME}', '--image', 'gcr.io/niveus-cici-demo/blog-comment', '--region', 'us-central1', '--quiet']
