@@ -12,7 +12,6 @@ steps:
   - '-Dsonar.projectKey=comment'
   - '-Dsonar.organization=demo-niveus'  
   - '-Dsonar.sources=.'
-tags: ['cloud-builders-community']
   # build the container image
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t', 'gcr.io/niveus-cici-demo/blog-comment', '.', ]
