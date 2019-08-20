@@ -12,7 +12,7 @@ steps:
   - '-Dsonar.projectKey=comment'
   - '-Dsonar.organization=demo-niveus'  
   - '-Dsonar.sources=.'
-  - '-Dsonar.tests=.'
+  - '-Dsonar.test.inclusions=*'
 #   - '-Dsonar.language=ts'
   # build the container image
 - name: 'gcr.io/cloud-builders/docker'
